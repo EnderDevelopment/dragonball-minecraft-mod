@@ -1,0 +1,9 @@
+{
+  "mappings": {
+    "PlayerEntityMixin": {
+      "target": "net/minecraft/entity/player/PlayerEntity",
+      "mixin": "com/enderdevelopment/dragonball/mixin/PlayerEntityMixin",
+      "priority": 1000
+    }
+  }
+}

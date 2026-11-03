@@ -1,0 +1,33 @@
+plugins {
+    id 'fabric-loom' version '1.4-SNAPSHOT'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'FabricMC'
+        url = 'https://maven.fabricmc.net/'
+    }
+}
+
+ext.archivesName = project.archives_base_name + "-" + project.minecraft_version + "-" + project.mod_version + ".jar"
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.loader_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "minecraft_version", project.minecraft_version
+    inputs.property "mod_version", project.mod_version
+}
+
+loom {
+    accessWidenerPath = file('src/main/resources/${project.archives_base_name}.accesswidener')
+    ide {
+        runDir = "run"
+    }
+}

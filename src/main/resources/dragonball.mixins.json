@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.enderdevelopment.dragonball.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "PlayerEntityMixin"
+  ],
+  "client": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "refmap": "dragonball.refmap.json"
+}
